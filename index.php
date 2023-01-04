@@ -78,10 +78,6 @@ $documents = query_getData($conn, "SELECT * from document");
     <script>
         $("#uploadDocumentForm").on("submit", function(e) {
             e.preventDefault();
-            if ($("#firstName").val().lenght <= 0 || $("#lastName").val().lenght <= 0 || $("#age").val().lenght <= 0 || $("#phoneNo").val().lenght <= 0) {
-                alert("Please enter correct data");
-                return;
-            }
             var form = $(this)[0];
             var formData = new FormData(form);
             formData.append("submit", "upload_document");
