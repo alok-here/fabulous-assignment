@@ -78,7 +78,7 @@ $documents = query_getData($conn, "SELECT * from document");
     <script>
         $("#uploadDocumentForm").on("submit", function(e) {
             e.preventDefault();
-            if ($("#firstName").val().lenght <= 0 && $("#lastName").val().lenght <= 0 && $("#age").val().lenght <= 0 && $("#phoneNo").val().lenght <= 0) {
+            if ($("#firstName").val().lenght <= 0 || $("#lastName").val().lenght <= 0 || $("#age").val().lenght <= 0 || $("#phoneNo").val().lenght <= 0) {
                 alert("Please enter correct data");
                 return;
             }
@@ -107,8 +107,7 @@ $documents = query_getData($conn, "SELECT * from document");
                             $("#error-list").html(errors);
                         } else alert(response.message);
                     }
-                },
-                complete: () => $(this).find(':input[type=submit]').removeClass('button--loading')
+                }
             });
         });
     </script>
